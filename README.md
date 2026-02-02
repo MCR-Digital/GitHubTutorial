@@ -15,17 +15,15 @@ By the end of this repo you should be able to:
 
 # Table of contents
 1. [Setup](#setup)
-2. [How this course works](#how-this-course-works)
-3. [Git fundamentals](#git-fundamentals)
-4. [Branching & workflow](#branching--workflow)
-5. [Pull requests & code review](#pull-requests--code-review)
-6. [Issues & project planning](#issues--project-planning)
-7. [Conflicts & recovery](#conflicts--recovery)
-8. [Automation & CI (GitHub Actions)](#automation--ci-github-actions)
-9. [Repo quality standards](#repo-quality-standards)
-10. [Exercises](#exercises)
-11. [Glossary](#glossary)
-12. [FAQ / Troubleshooting](#faq--troubleshooting)
+2. [How this Course Works](#how-this-course-works)
+3. [Git Fundamentals](#git-fundamentals)
+4. [Branching & Workflow](#branching--workflow)
+5. [Pull Requests & Code Review](#pull-requests--code-review)
+6. [Issues & Project Planning](#issues--project-planning)
+7. [Conflicts & Resolution](#conflicts--resolution)
+8. [Automation - GitHub Actions](#automation---github-actions)
+9. [Git Cheat Sheet](#git-cheat-sheet)
+10. [FAQ / Troubleshooting](#faq--troubleshooting)
 
 ---
 
@@ -295,7 +293,7 @@ As the PR author:
 
 ---
 
-## Issues & project planning
+## Issues & Project Planning
 
 **Issues** are GitHub's proposal for project tracking and management.
 They act as a shared to-do list, design space, and history of decisions.
@@ -405,7 +403,7 @@ Make sure to check your changes to ensure your changes are as you expect them to
 
 ---
 
-## Automation & Continuous Integration (GitHub Actions)
+## Automation - GitHub Actions
 
 GitHub Actions is a powerful automation tool built into GitHub. In brief, it allows you to define workflows of actions to take place following certain interactions with GitHub.
 These interactions could be:
@@ -418,3 +416,75 @@ On any of these events, we may want to run our test suite, run a linter, or depl
 These checks can be added to our PR flow, and if any were to fail we could block the PR from being merged. This type of automation is vital for a large software team working at scale. Some engineers may have many changes on-going at once, and cycle between them while automated checks are run in the background.
 
 This topic is very deep, so I won't go into detail here. More information can be found in the [GitHub Actions documentation](https://github.com/features/actions).
+
+---
+
+## Git Cheat Sheet
+
+```bash
+git clone <repo-url>                  # Clone a remote repository
+git status                            # Show current state (most important command)
+git log                               # Show commit history
+git log --oneline                     # Compact commit history
+git branch                            # List local branches
+git add <file>                        # Stage a file
+git add .                             # Stage all changes
+git commit -m "message"               # Commit staged changes
+git diff                              # Diff unstaged changes
+git diff --staged                     # Diff staged changes
+git push                              # Push commits to remote
+git push -u origin branch-name        # Push new branch (first time)
+git pull                              # Fetch + merge latest changes
+git fetch                             # Get latest changes from remote
+git merge branch-name                 # Merge branch into your branch
+git restore <file>                    # Undo unstaged changes
+git restore --staged <file>           # Unstage a file
+git cherry-pick <commit-hash>         # Apply a commit to your branch (can be any commit in the history of any branch)
+git reset --soft HEAD~1               # Undo last commit (keep changes) (useful command for when you forget something!)
+git branch -d branch-name             # Delete local branch
+git push origin --delete branch-name  # Delete remote branch
+```
+
+---
+
+## FAQ & Troubleshooting
+
+This section covers common questions and problems you’re likely to encounter.  
+When something feels wrong, slow down — Git almost always tells you what’s happening.
+
+### “I can’t push my changes”
+
+Common causes:
+- You haven’t committed yet
+- You’re on the wrong branch
+- The branch doesn’t exist on the remote yet
+- Authentication failed
+
+What to check:
+```bash
+git status
+git branch
+```
+
+### “I can’t push my changes”
+
+This usually means you didn’t commit.
+
+What to check:
+```bash
+git status
+git add .
+git commit -m "Your message"
+git push
+```
+
+### “I committed to the wrong branch”
+
+Don’t panic — this is fixable.
+
+```bash
+git checkout correct-branch
+git cherry-pick <commit-hash> # Take your accidental commit and apply it to the correct branch
+git checkout wrong-branch
+git reset --hard HEAD~1 # Remove the accidental commit from the wrong branch
+```

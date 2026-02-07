@@ -1,6 +1,6 @@
 # GitHub Essentials for Engineers
 
-Welcome! This repository is a hands-on guide to learning Git + GitHub the way engineering teams actually use it: branches, pull requests, code review, issues, and automation.
+Welcome! This repository is a hands-on guide to learning Git and GitHub the way engineering teams actually use it: branches, pull requests, code review, issues, and automation.
 
 ## Learning goals
 By the end of this repo you should be able to:
@@ -8,7 +8,6 @@ By the end of this repo you should be able to:
 - Open a **Pull Request (PR)**, request review, respond to feedback, and merge safely.
 - Use **Issues** for planning and bug reports (with labels and templates).
 - Resolve **merge conflicts** confidently.
-- Understand the basics of **CI** and why checks matter.
 - Work in a team using a simple workflow.
 
 ---

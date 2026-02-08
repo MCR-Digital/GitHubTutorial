@@ -372,7 +372,7 @@ The longer a branch lives, the more likely conflicts become.
 7. **Commit and push the changes**
    ```bash
    git add <file>
-   git commit -m "Resolve merge conflict"
+   git commit -m "Resolve merge conflict" OR git commit (and use vim)
    git push
    ```
    

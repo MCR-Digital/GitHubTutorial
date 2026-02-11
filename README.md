@@ -69,6 +69,10 @@ Branches allow you to work on changes **without breaking the main codebase**. Ev
 There are many different Git branching methodologies; however, I'd recommend keeping it as simple as possible.
 In this tutorial, the `main` branch represents **stable, working code**. In practice, some organisations may use a few different 'stable' branches alongside the `main` branch.
 
+<p align="center">
+   <img width="771" height="471" alt="03-branching-example" src="https://github.com/user-attachments/assets/1a9f9e8b-e2ce-4b57-851d-3311205dfff8" />
+</p>
+
 ---
 
 ### Cloning a Repository
